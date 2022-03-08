@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&family=Pirata+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Redressed&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Aarambh</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        
+        #particles-js {
+            height: 100%;
+            /* background-image: url("background.jpg"); */
+        }
+        
+        .text {
+            font-size: 100px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-family: 'Big Shoulders Stencil Text', cursive;
+            text-transform: uppercase;
+            color: transparent;
+            -webkit-text-stroke: 0.3vw white;
+            cursor: pointer;
+            letter-spacing: 20px;
+            position: relative;
+            top: 240px;
+        }
+        
+        .text:hover {
+            color: white;
+            transition: 0.6s;
+            letter-spacing: 30px;
+            transition: 0.6s ease-in-out;
+            /* text-shadow: 1px 1px 5px red; */
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* background: black; */
+            background-image: url("background.jpg");
+        }
+        
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 100px;
+            /* box-shadow: 1px 1px 10px red; */
+        }
+        
+        .container .box {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container .box:hover {
+            color: #000;
+        }
+        
+        .container .box:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 4px solid #fff;
+            background: #000;
+            filter: url(#wavy);
+        }
+        
+        .container .box:hover:before {
+            background: white;
+            transition: 0.5s;
+        }
+        
+        .container .box .content {
+            position: absolute;
+            padding: 20px;
+            text-align: center;
+            transition: 0.5s;
+        }
+        
+        .container .box:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            border: 4px solid #fff;
+            border-right: none;
+            background: rgba(255, 255, 255, 0.1);
+            filter: url(#wavy);
+        }
+        
+        svg {
+            width: 0;
+            height: 0;
+        }
+        /* .container .box {
+            width: 450px;
+        }
+         */
+        
+        .container-main {
+            display: flex;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .icons {
+            list-style: none;
+            display: flex;
+        }
+        
+        .icons li a {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            font-size: 30px;
+            margin: 0 80px;
+            border-radius: 100%;
+            /* border: 3px solid #E1306c; */
+            justify-content: center;
+            align-items: center;
+            color: #E1306c;
+            box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: 0.5s;
+        }
+        
+        .icons li p {
+            font-size: 20px;
+        }
+        
+        .icons li a:hover {
+            color: #E1306c;
+            transform: translateY(-20px);
+            box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 24px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .footer {
+            background: rgb(255, 249, 249);
+            padding: 20px 0;
+            box-shadow: 1px 1px 10px gray;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            /* width: 100%; */
+            /* margin-right: 0px; */
+        }
+        
+        .left li a {
+            margin: 10px 0;
+            position: relative;
+            left: 50px;
+        }
+        
+        .right li a {
+            margin: 10px 0;
+            position: relative;
+            left: 100px;
+        }
+        
+        .footer p {
+            font-size: 30px;
+            justify-content: center;
+            text-align: center;
+            margin: 25px;
+            font-family: 'Redressed', cursive;
+        }
+        
+        .footer .icons {
+            text-align: center;
+            justify-content: center;
+        }
+        
+        .text-One {
+            font-size: 40px;
+            position: relative;
+            top: 236px;
+            left: 992px;
+            color: white;
+            /* font-family: 'Pirata One', cursive; */
+            font-family: 'Redressed', cursive;
+        }
+        
+        .text-Two {
+            font-size: 80px;
+            position: relative;
+            top: 264px;
+            /* left: 515px; */
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-family: 'Pirata One', cursive;
+            /* letter-spacing: 20px; */
+            font-weight: 500;
+            text-transform: uppercase;
+            /* box-shadow: 1px 1px 9px white; */
+            -webkit-text-stroke: 0.2vw white;
+            text-shadow: 1px 1px 20px rgb(189, 134, 134);
+        }
+        
+        #image-college {
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            top: 30px;
+            left: 300px;
+        }
+        
+        .text-Three {
+            color: white;
+            position: absolute;
+            top: 70px;
+            left: 560px;
+            /* font-family: 'Redressed', cursive; */
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: 1px;
+            font-weight: 300;
+            font-size: 30px;
+            line-height: 50px;
+            margin: 0;
+        }
+        
+        .text-Three span {
+            /* font-family: 'Redressed', cursive; */
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin: 0;
+            position: relative;
+            bottom: 40px;
+            font-weight: 700;
+            /* text-shadow: 3px 3px 5px rgb(40, 248, 255); */
+            text-decoration: underline;
+            /* text-transform: uppercase; */
+        }
+        
+        .text-Three p {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .video {
+            height: 400px;
+            width: 400px;
+            /* margin: 0px 0px 120px 300px; */
+            /* border: 2px solid white; */
+            padding: 0px 0px 120px 430px;
+            /* margin-left: 60px; */
+        }
+        
+        .video video {
+            /* border: 2px solid wheat; */
+            border-radius: 10px;
+            /* box-shadow: 5px 5px 20px white; */
+            box-shadow: rgb(144, 214, 255) 0px 5px 15px;
+        }
+        
+        @media(max-width: 500px) {
+            .text {
+                font-size: 40px;
+                letter-spacing: normal;
+                position: absolute;
+                -webkit-text-stroke: 0.2vw white;
+                top: 200px;
+                left: 29px;
+            }
+            .text:hover {
+                letter-spacing: 3px;
+            }
+            .container-main {
+                display: block;
+                margin-top: 100px;
+            }
+            .container {
+                margin: -486px 95px 665px 95px;
+            }
+            .last {
+                margin-bottom: 200px;
+            }
+            .container .box {
+                margin: -40px;
+            }
+            .icons li a {
+                margin: 0 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 15px;
+            }
+            .footer p {
+                font-size: 16px;
+            }
+            .text-One {
+                font-size: 17px;
+                position: absolute;
+                top: 248px;
+                left: 223px;
+            }
+            .text-Two {
+                font-size: 40px;
+                position: absolute;
+                top: 300px;
+                left: 55px;
+                padding: 5px 40px;
+            }
+            .text-Three {
+                font-size: 12px;
+                position: absolute;
+                top: 50px;
+                left: 157px;
+                line-height: 20px;
+            }
+            #image-college {
+                height: 100px;
+                width: 100px;
+                position: absolute;
+                top: 30px;
+                left: 30px;
+            }
+            .text-Three span {
+                position: relative;
+                bottom: 10px;
+            }
+            .text-Three p {
+                display: flex;
+                text-align: none;
+                justify-content: none;
+            }
+            .icons li p {
+                margin-left: -1px;
+                margin-top: 6px;
+                font-size: 15px;
+            }
+            .video {
+                /* height: 400px;
+                width: 350px; */
+                /* margin: 0px 0px 120px 300px; */
+                display: block;
+                position: relative;
+                right: 400px;
+                bottom: 400px;
+                /* padding-left: 10px; */
+                /* margin-left: 10px; */
+                /* border: 2px solid white; */
+            }
+            .video video {
+                height: 300px;
+                width: 350px;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="particles-js">
+        <img id="image-college" src="logo.png" alt="" srcset="">
+        <h4 class="text-Three">G.S College of Commerce & Economics ,Nagpur <br>
+            <p>An Autonomus Institution</p> <br> <span>BCCA Department Presents</span></h4>
+        <h1 class="text">Aarambh 2021-22</h1>
+        <h3 class="text-One">Post Pandemic Edition</h3>
+        <h2 class="text-Two">पुनश्चहरि &nbsp;ॐ</h2>
+
+    </div>
+    <div class="video">
+        <video controls>
+            <source src="video.mp4" type="video/mp4">
+            
+          
+          </video>
+    </div>
+
+    <div class="container-main">
+        <div class="container">
+            <div class="box">
+                <div class="content">
+                    <h2> <u> Date and Venue</u> </h2> <br>
+                    <p> Date : 13/03/2022 <br><br> Venue : Room No. 305, <br> BCCA Department, <br> G.S. College of Commerce and Economics <br><br> Timings : 10:00 AM till Fun Lasts ! <br><br> Guest : Principal N.Y. Khandait Sir.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="box">
+                <div class="content">
+                    <h2><u> Technical Session</u> </h2> <br>
+                    <p> Presented by Final year and Second year students of BCCA. It includes a Powerpoint Presentation alongwith all the knowledge correlating to our theme "A NEW BEGINNING". </p>
+                </div>
+            </div>
+        </div>
+        <div class="container last">
+            <div class="box">
+                <div class="content">
+                    <h2><u> Non-Technical</u></h2> <br>
+                    <p> Includes a deliciously presented and heartwarmingly made Lunch for all. Next there are interactive games and activities for the newbies. Finally, including an exhilarating dance session for everyone to enjoy. </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <svg>
+<filter id="wavy">
+    <feTurbulence x="0" y="0" baseFrequency="0.02" numOctaves="5" seed="2"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" scale="30"/>
+</filter>
+    </svg>
+
+
+
+    <div class="footer">
+        <p>Contact us if you face any query</p>
+        <div class="icons">
+
+
+
+            <!-- <li><a href="https://www.instagram.com/mahimadwivedi_/" target="_blank"><span class="fab fa-instagram"></span></a></li> -->
+
+            <li><a href="https://www.instagram.com/_ryoiki_tenkaii_/" target="_blank"><span class="fab fa-instagram"></span></a>
+                <p>Nachiket Patil</p>
+            </li>
+
+
+
+            <li><a href="https://www.instagram.com/kanhadharmik_/" target="_blank"><span class="fab fa-instagram"></span></a>
+                <p>Kanha Dharmik</p>
+            </li>
+            <li><a href="https://www.instagram.com/tanushreee/" target="_blank"><span class="fab fa-instagram"></span></a>
+                <p>Tanushree Biroley</p>
+            </li>
+            <li><a href="https://www.instagram.com/santanihimanshu/" target="_blank"><span class="fab fa-instagram"></span></a>
+                <p>Himanshu Santani</p>
+            </li>
+            <!-- <li><a href="https://www.instagram.com/khushi.tarekar/" target="_blank"><span class="fab fa-instagram"></span></a></li> -->
+            <!-- <li><a href="https://www.instagram.com/santanihimanshu/" target="_blank"><span class="fab fa-instagram"></span></a>
+                <p>Himanshu Santani</p>
+            </li> -->
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="particles.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
